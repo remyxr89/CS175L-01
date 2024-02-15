@@ -2,32 +2,38 @@
 #CS175L-01
 #restaurant
 
-vegetarian = False
-vegan = False
-gluten_free = False
+yes = 'yes'
+while yes == 'yes':
 
-vegetarian_response = input("Is anyone in your party vegetarian?: ")
-vegan_response = input("Is anyone in your party vegan?: ")
-gluten_free_response = input("Is anyone in your party gluten-free?: ")
-print('')
+    vegetarian = False
+    vegan = False
+    gluten_free = False
 
-if vegetarian_response == "yes":
-    vegetarian = True
-if vegan_response == "yes":
-    vegan = True
-if gluten_free_response == "yes":
-    gluten_free = True
+    vegetarian_response = input("Is anyone in your party vegetarian?: ")
+    vegan_response = input("Is anyone in your party vegan?: ")
+    gluten_free_response = input("Is anyone in your party gluten-free?: ")
+    print('')
 
-print('Here are your restaurant choices: ')
+    if vegetarian_response == "yes":
+        vegetarian = True
+    if vegan_response == "yes":
+        vegan = True
+    if gluten_free_response == "yes":
+        gluten_free = True
 
-if vegetarian == False and vegan == False and gluten_free == False:
-    print('Joe\'s Gourment Burgers')
+    print('Here are your restaurant choices: ')
 
-if vegan == False and gluten_free == False:
-    print('Mama\'s Fine Italian')
+    if vegetarian == False and vegan == False and gluten_free == False:
+        print('Joe\'s Gourment Burgers')
 
-if vegan == False:
-    print('Main Street Pizza Company')
+    if vegan == False and gluten_free == False:
+        print('Mama\'s Fine Italian')
+
+    if vegan == False:
+        print('Main Street Pizza Company')
     
-print('Corner Café')
-print('The Chef\'s Kitchen')
+    print('Corner Café')
+    print('The Chef\'s Kitchen')
+
+    yes = input('Enter \'yes\' if you would like to do another ' +
+      'restaurant search (enter \'no\' to end): ')
