@@ -21,7 +21,7 @@ def doConversion(Fahrenheit):
     print(f'\nCentrigrade: {Centigrade:.2f}\n')
 
 def repeat():
-    submit = int(input('How many conversion would you like to do this time?: '))
+    submit = int(input('How many conversions would you like to do this time?: '))
     for x in range (submit):
         Fahrenheit = getFahrenheit()
         doConversion(Fahrenheit)
