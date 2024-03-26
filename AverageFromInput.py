@@ -2,21 +2,42 @@
 #CS175L-01
 #AverageFromInput
 
+import sys
+
 def main():
-    infile = open('numbers.txt', 'r')
-    total = 0
+    total = 0.0
     i = 1
 
-    for line in infile:
+    try:
+        infile = open('numbers.txt', 'r')
 
-        num = float(line)
-        total += num
-        print(f'I read in {i} number(s) Current number is:  {num:.2f}', end='')
-        print(f' Total is:  {total:.2f}')
+        for line in infile:
 
-        i+=1
+            num = float(line)
+            total += num
+            print(f'I read in {i} number(s) Current number is:  {num:.2f}', end='')
+            print(f' Total is:  {total:.2f}')
 
-    print(f'Average: {total / 3}')
+            i+=1
+
+        print(f'Average: {total / 3}')
+        
+    except IOError:
+        sys.exit('SystemExit: File not found: numbers.txt - exiting')
+
+    except ValueError:
+        print('Bad data:',line.strip(),'skipping')
+
+        for line in infile:
+
+            num = float(line)
+            total += num
+            print(f'I read in {i} number(s) Current number is:  {num:.2f}', end='')
+            print(f' Total is:  {total:.2f}')
+
+            i+=1
+
+        print(f'Average: {total / 3}')
 
 if __name__ == '__main__':
     main()
